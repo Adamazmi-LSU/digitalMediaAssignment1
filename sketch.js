@@ -52,35 +52,26 @@ function draw() {
 
   square(950,-60,500)
 
-  // Green circle with white outline
-  fill(120, 100, 80); // Green color
-  stroke(0, 0, 100); // White stroke
-  strokeWeight(8); // Stroke thickness
-  ellipse(1200, 200, 300, 300); // Position and size of the circle
   
-  // Constructing a star using triangles
-  noStroke(); // No border for the triangles
-  fill(0, 100, 80); // Red color for the star
+  fill(120, 100, 80); 
+  stroke(0, 0, 100); 
+  strokeWeight(8); 
+  ellipse(1200, 200, 300, 300); 
+  
+  
+  stroke(0, 0, 100);
+  strokeWeight(3);
+  fill(0, 100, 80); 
 
-  // Define coordinates for the star based on the visual input
-  const points = [
-    { x: 1200, y: 130 }, // Top point
-    { x: 1160, y: 230 }, // Left top
-    { x: 1130, y: 270 }, // Left bottom
-    { x: 1200, y: 250 }, // Bottom center
-    { x: 1270, y: 270 }, // Right bottom
-    { x: 1240, y: 230 }  // Right top
-  ];
-
-  // Draw triangles from center to create star points
-  for (let i = 0; i < points.length; i++) {
-    let nextIndex = (i + 1) % points.length;
-    triangle(
-      1200, 200,
-      points[i].x, points[i].y,
-      points[nextIndex].x, points[nextIndex].y
-    );
-  }
+  
+  triangle(1200, 80, 1160, 170, 1240, 170);
+  // Bottom left triangle
+  triangle(1120, 300, 1200, 260, 1130, 220);
+  // Bottom right triangle
+  triangle(1280, 300, 1200, 260, 1270, 220);
+  // Left triangle
+  triangle(1160, 170, 1130, 220, 1075, 170);
+  // Right triangle
+  triangle(1240, 170, 1270, 220, 1325, 170);
 }
-
 
